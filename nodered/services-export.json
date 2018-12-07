@@ -1,0 +1,1060 @@
+[
+    {
+        "id": "3cc8a973.785dd6",
+        "type": "tab",
+        "label": "Service",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "12337165.78f89f",
+        "type": "mqtt out",
+        "z": "3cc8a973.785dd6",
+        "name": "post service request",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "14521b8c.eea744",
+        "x": 1220,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "23d2a696.5dd77a",
+        "type": "ui_dropdown",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "label": "Restart: ",
+        "place": "Select device",
+        "group": "f0f877d6.9774c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "restart",
+        "x": 660,
+        "y": 360,
+        "wires": [
+            [
+                "512b9229.15f48c"
+            ]
+        ]
+    },
+    {
+        "id": "3df922be.e3cd9e",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[\t   {\"select a device\":\"select a device\"},\t   {\"temp sensor 3ec\":\"ESP_a9e73ec\"},\t   {\"temp sensor 750\":\"ESP_a9ee750\"},\t   {\"temp sensor 585\":\"ESP_a8585\"} \t]\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 480,
+        "wires": [
+            [
+                "23d2a696.5dd77a",
+                "f4bdec9f.11f14",
+                "49d10ea9.a6d3b",
+                "de21d654.211fe8"
+            ]
+        ]
+    },
+    {
+        "id": "5f6cd440.68d41c",
+        "type": "inject",
+        "z": "3cc8a973.785dd6",
+        "name": "load test devices",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "3df922be.e3cd9e"
+            ]
+        ]
+    },
+    {
+        "id": "f4bdec9f.11f14",
+        "type": "ui_dropdown",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "label": "Format FS: ",
+        "place": "Select device",
+        "group": "f0f877d6.9774c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "format FS",
+        "x": 670,
+        "y": 420,
+        "wires": [
+            [
+                "512b9229.15f48c"
+            ]
+        ]
+    },
+    {
+        "id": "49d10ea9.a6d3b",
+        "type": "ui_dropdown",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "label": "Settings AP: ",
+        "place": "Select device",
+        "group": "f0f877d6.9774c8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "settingsAP",
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "512b9229.15f48c"
+            ]
+        ]
+    },
+    {
+        "id": "e79a1f25.f6d58",
+        "type": "mqtt in",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "topic": "deviceLog/#",
+        "qos": "2",
+        "broker": "14521b8c.eea744",
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "3df024ff.e79afc",
+                "bc76e556.41a2a8"
+            ]
+        ]
+    },
+    {
+        "id": "d719eb25.103ef8",
+        "type": "json",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 630,
+        "y": 40,
+        "wires": [
+            [
+                "b01b1d19.45972"
+            ]
+        ]
+    },
+    {
+        "id": "512b9229.15f48c",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "deviceId",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 420,
+        "wires": [
+            [
+                "3297b004.d6eb3"
+            ]
+        ]
+    },
+    {
+        "id": "3297b004.d6eb3",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "create service message",
+        "func": "msg.payload = msg.topic\nmsg.topic = \"service/\" + msg.deviceId\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 500,
+        "wires": [
+            [
+                "12337165.78f89f"
+            ]
+        ]
+    },
+    {
+        "id": "6b862f62.a45ed",
+        "type": "file",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 630,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73e4a453.5c2f2c",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "upsert device into file",
+        "func": "// check to see if fromFile is empty, if so push new device from fromMQTT\n// loop thru fromFile array and see if device is already there, if so replace details\n// if not there push the new device\n\nvar newPayload = [];\nif (typeof msg.payload.fromMQTT.name !== 'undefined') {\n  // the variable is defined\n} else {\n  msg.payload.fromMQTT.name = msg.payload.fromMQTT.deviceId;    \n}\n\nmsg.topic = \"processed\";\n\nif (msg.payload.fromFile.length > 0) {\n  msg.payload.fromFileEmpty = false;\n} else {\n  msg.payload.fromFileEmpty = true;\n  newPayload.push(msg.payload.fromMQTT);\n  msg.payload = newPayload;\n  return msg;\n}\n\nvar arrayLength = msg.payload.fromFile.length;\nfor (var i = 0; i < arrayLength; i++) {\n  if (msg.payload.fromFile[i].deviceId == msg.payload.fromMQTT.deviceId) {\n    msg.payload.fromFile[i] = msg.payload.fromMQTT;\n    newPayload = msg.payload.fromFile;\n    msg.matchfound = true;\n    msg.payload = newPayload;\n    return msg;\n  }\n}\n\n// must be a new device...add it\nmsg.payload.fromFile.push(msg.payload.fromMQTT);\nnewPayload = msg.payload.fromFile;\nmsg.addedAsNew = true;\nmsg.payload = newPayload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 100,
+        "wires": [
+            [
+                "82aeb71e.acfe78"
+            ]
+        ]
+    },
+    {
+        "id": "3df024ff.e79afc",
+        "type": "file in",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "x": 310,
+        "y": 40,
+        "wires": [
+            [
+                "56a65711.ee69b8"
+            ]
+        ]
+    },
+    {
+        "id": "b01b1d19.45972",
+        "type": "join",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 750,
+        "y": 100,
+        "wires": [
+            [
+                "73e4a453.5c2f2c"
+            ]
+        ]
+    },
+    {
+        "id": "56a65711.ee69b8",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "set topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fromFile",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "d719eb25.103ef8"
+            ]
+        ]
+    },
+    {
+        "id": "db09f00b.8a337",
+        "type": "json",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "b01b1d19.45972"
+            ]
+        ]
+    },
+    {
+        "id": "bc76e556.41a2a8",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "set topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fromMQTT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "db09f00b.8a337"
+            ]
+        ]
+    },
+    {
+        "id": "5aa67f0e.889e3",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "insert test data",
+        "func": "var myDevices = [];\n//myDevices[0] = 200;\n\nmyDevices.push({\"deviceId\": \"ESP_a9ee750\", \n              \"name\": \"Bedroom sensor\",\n              \"deviceType\": \"ESP32\",\n              \"chipId\": \"9ec40a24\",\n              \"sketchName\": \"BMP280-online,ino\"\n});\nmyDevices.push({\"deviceId\": \"ESP_a9ee757\", \n              \"name\": \"Kitchen sensor\",\n              \"deviceType\": \"ESP32\",\n              \"chipId\": \"9ec40a24\",\n              \"sketchName\": \"BMP280-online,ino\"\n});\nmyDevices.push({\"deviceId\": \"ESP_a9ee787\", \n              \"name\": \"Porch sensor\",\n              \"deviceType\": \"ESP32\",\n              \"chipId\": \"9ec40a24\",\n              \"sketchName\": \"BMP280-online,ino\"\n});\n\n\n\nmsg.debug = \"MESSAGEHERER\";\n\n//myDevices[1] = device;\n//myDevices.push({\"deviceId\": \"8899\", \"name\": \"Kitchen sensor\"});\n\nmsg.payload = myDevices;\n//msg.payload = JSON.stringify(myDevices);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 820,
+        "wires": [
+            [
+                "6b862f62.a45ed"
+            ]
+        ]
+    },
+    {
+        "id": "339e0dea.c578c2",
+        "type": "inject",
+        "z": "3cc8a973.785dd6",
+        "name": "insert test data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 820,
+        "wires": [
+            [
+                "5aa67f0e.889e3"
+            ]
+        ]
+    },
+    {
+        "id": "b86a1a90.a05848",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "reset devices.log file",
+        "func": "var myDevices = [];\nmsg.payload = myDevices;\n\n//msg.payload = JSON.stringify(myDevices);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "6b862f62.a45ed"
+            ]
+        ]
+    },
+    {
+        "id": "fab1fb3f.b13ad8",
+        "type": "inject",
+        "z": "3cc8a973.785dd6",
+        "name": "clear devices.log file",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "b86a1a90.a05848"
+            ]
+        ]
+    },
+    {
+        "id": "82aeb71e.acfe78",
+        "type": "file",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 910,
+        "y": 180,
+        "wires": [
+            [
+                "2c945937.102906"
+            ]
+        ]
+    },
+    {
+        "id": "2c945937.102906",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "extract dropdown options",
+        "func": "var options = [];\n\nvar arrayLength = msg.payload.length;\nfor (var i = 0; i < arrayLength; i++) {\n  var option = {};\n  option[msg.payload[i].name] =  msg.payload[i].deviceId;\n  options[i] = option;    \n}\nvar dummy = {\"select a device\" : \"select a device\"};\noptions.unshift(dummy);\n\nmsg.options = options;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "49d10ea9.a6d3b",
+                "f4bdec9f.11f14",
+                "23d2a696.5dd77a",
+                "de21d654.211fe8"
+            ]
+        ]
+    },
+    {
+        "id": "4d24062f.dd4a98",
+        "type": "file in",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "b3c8a273.b0462"
+            ]
+        ]
+    },
+    {
+        "id": "711a3095.23a52",
+        "type": "inject",
+        "z": "3cc8a973.785dd6",
+        "name": "manually load devices",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "4d24062f.dd4a98"
+            ]
+        ]
+    },
+    {
+        "id": "b3c8a273.b0462",
+        "type": "json",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 270,
+        "y": 420,
+        "wires": [
+            [
+                "2c945937.102906"
+            ]
+        ]
+    },
+    {
+        "id": "de21d654.211fe8",
+        "type": "ui_dropdown",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "label": "Remove Device: ",
+        "place": "Select device to remove",
+        "group": "f0f877d6.9774c8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "e29eb580.6bd378",
+                "a0f41f65.8679e"
+            ]
+        ]
+    },
+    {
+        "id": "27de9acc.fb6ac6",
+        "type": "ui_template",
+        "z": "3cc8a973.785dd6",
+        "group": "f0f877d6.9774c8",
+        "name": "line",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>\n\n<br><br><br><br>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 650,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2dd65fbc.512b",
+        "type": "function",
+        "z": "3cc8a973.785dd6",
+        "name": "remove device from devices.log",
+        "func": "// take deviceId from input\n// loop thru fromFile array and see if device is there, if so remove it\n// return msg;\n\nvar newPayload = [];\n\nmsg.topic = \"processed\";\n\nif (msg.payload.fromFile.length < 1) {\n  return msg;\n}\n\nvar arrayLength = msg.payload.fromFile.length;\nfor (var i = 0; i < arrayLength; i++) {\n  if (msg.payload.fromFile[i].deviceId == msg.payload.fromDropDown) {\n    msg.deviceRemoved = msg.payload.fromDropDown;\n  } else {\n    newPayload.push(msg.payload.fromFile[i])\n  }\n}\n\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1270,
+        "y": 540,
+        "wires": [
+            [
+                "128f7490.5d3e6b"
+            ]
+        ]
+    },
+    {
+        "id": "e29eb580.6bd378",
+        "type": "file in",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "x": 630,
+        "y": 680,
+        "wires": [
+            [
+                "43d9b243.6bdf1c"
+            ]
+        ]
+    },
+    {
+        "id": "a0f41f65.8679e",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fromDropDown",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 580,
+        "wires": [
+            [
+                "daac4bce.cbda48"
+            ]
+        ]
+    },
+    {
+        "id": "43d9b243.6bdf1c",
+        "type": "change",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fromFile",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 640,
+        "wires": [
+            [
+                "5b799e51.e2327"
+            ]
+        ]
+    },
+    {
+        "id": "5b799e51.e2327",
+        "type": "json",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1050,
+        "y": 640,
+        "wires": [
+            [
+                "daac4bce.cbda48"
+            ]
+        ]
+    },
+    {
+        "id": "daac4bce.cbda48",
+        "type": "join",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 580,
+        "wires": [
+            [
+                "2dd65fbc.512b"
+            ]
+        ]
+    },
+    {
+        "id": "128f7490.5d3e6b",
+        "type": "file",
+        "z": "3cc8a973.785dd6",
+        "name": "",
+        "filename": "/config/devices.log",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 1290,
+        "y": 280,
+        "wires": [
+            [
+                "2c945937.102906"
+            ]
+        ]
+    },
+    {
+        "id": "14521b8c.eea744",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "CHANGEME",
+        "broker": "CHANGEME",
+        "port": "1883",
+        "clientid": "HA-NR-46594665554",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f0f877d6.9774c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Service Devices",
+        "tab": "7a118fff.eb6378",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": true
+    },
+    {
+        "id": "7a118fff.eb6378",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Service",
+        "icon": "dashboard",
+        "order": 1
+    }
+]

@@ -1,0 +1,44 @@
+#######################################
+# Syntax Coloring Map For WifiMQTTManager
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+WiFiMQTTManager	KEYWORD1
+wm  KEYWORD1
+client  KEYWORD1
+_espClient  KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+resetPin    KEYWORD2
+setup   KEYWORD2
+loop    KEYWORD2
+clientId    KEYWORD2
+deviceId    KEYWORD2
+subscribeTo KEYWORD2
+formatFS    KEYWORD2
+lastMsg KEYWORD2
+_setupSpiffs    KEYWORD2
+_checkButton    KEYWORD2
+_reconnect  KEYWORD2
+_mqtt_server    KEYWORD2
+_mqtt_port  KEYWORD2
+_mqtt_username  KEYWORD2
+_mqtt_password  KEYWORD2
+_ledPin KEYWORD2
+_LED_BUILTIN    KEYWORD2
+_lastMsg    KEYWORD2
+_lastMsg    KEYWORD2
+_value  KEYWORD2
+_shouldSaveConfig   KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+#	LITERAL1
