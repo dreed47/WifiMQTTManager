@@ -370,11 +370,11 @@
         "id": "e79a1f25.f6d58",
         "type": "mqtt in",
         "z": "3cc8a973.785dd6",
-        "name": "",
+        "name": "Subscribe to device/log/#",
         "topic": "deviceLog/#",
         "qos": "2",
         "broker": "14521b8c.eea744",
-        "x": 90,
+        "x": 130,
         "y": 160,
         "wires": [
             [
@@ -721,11 +721,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "repeat": "",
+        "repeat": "1800",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
-        "x": 120,
+        "x": 130,
         "y": 220,
         "wires": [
             [
@@ -1023,7 +1023,7 @@
         "name": "CHANGEME",
         "broker": "CHANGEME",
         "port": "1883",
-        "clientid": "HA-NR-46594665554",
+        "clientid": "CHANGEME",
         "usetls": false,
         "compatmode": true,
         "keepalive": "60",
@@ -1046,7 +1046,7 @@
         "tab": "7a118fff.eb6378",
         "order": 1,
         "disp": true,
-        "width": "12",
+        "width": "9",
         "collapse": true
     },
     {
