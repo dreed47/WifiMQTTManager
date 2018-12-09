@@ -15,15 +15,16 @@ First cut at a library. Contributions are welcome.
 
 ## Quick Start
 1. Install the required libraries (see above)
-2. Edit the PubSubClient.h header file and change MQTT_MAX_PACKET_SIZE to 512
-3. Import (then Deploy) into Node Red the Dashboard json found in [/nodered/services-export.json](./nodered/services-export.json) file
-4. Open Arduino IDE and attach your ESP32 or ESP8266 controller board to your computer (select the correct board and port)
-5. In Arduino IDE open File->Examples->WiFiMQTTManager->Basic sketch
-6. Change the AP_PASSWORD in secrets.h file to a suitable password for your device Access Points
-7. Upload the sketch to your device (you may need to uncomment the wm.formatFS = true; line in the basic sketch but if you do make sure you comment it back out and re-load your sketch after the device file system is formatted) (the serial monitor window will show helpful information)
-8. After a few seconds you should see a new SSID in your available WiFi Access Points in the formap of ESP_xxxxxxxx.  Select this SSID and a new configuration popup window will appear. 
-9. Enter your SSID and password, your MQTT server address and port and give your device a user friendly name
-10. A few seconds after your device is configured you should see the new device show up in the Service Dashboard dropdown widgets.
+2. Download [WiFiMQTTManager](https://github.com/dreed47/WifiMQTTManager/archive/master.zip) and unzip it in your Arduino libraries folder.  Make sure the folder name is "WiFiMQTTManager".
+3. Edit the PubSubClient.h header file and change MQTT_MAX_PACKET_SIZE to 512
+4. Import (then Deploy) into Node Red the Dashboard json found in [/nodered/services-export.json](./nodered/services-export.json) file (make sure you enter your MQTT server address in the two MQTT nodes in the flow)
+5. Open Arduino IDE and attach your ESP32 or ESP8266 controller board to your computer (select the correct board and port)
+6. In Arduino IDE open File->Examples->WiFiMQTTManager->Basic sketch
+7. Change the AP_PASSWORD in secrets.h file to a suitable password for your device Access Points
+8. Upload the sketch to your device (you may need to uncomment the wm.formatFS = true; line in the basic sketch but if you do make sure you comment it back out and re-load your sketch after the device file system is formatted) (the serial monitor window will show helpful information)
+9. After a few seconds you should see a new SSID in your available WiFi Access Points in the formap of ESP_xxxxxxxx.  Select this SSID and a new configuration popup window will appear. 
+10. Enter your SSID and password, your MQTT server address and port and give your device a user friendly name
+11. A few seconds after your device is configured you should see the new device show up in the Service Dashboard dropdown widgets.
 
 
 ## Dashboard
