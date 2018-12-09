@@ -46,7 +46,7 @@ For issues, feature requests, comments or questions, use the [Github issues trac
 5. Submit a pull request.
 
 ## History
-Dec 10, 2018 - Version 1.0.0 released
+Dec 10, 2018 - Version 1.0.0-beta released
 
 ## Credits
 * [AlexT](https://github.com/tzapu) - author of [WiFiManager](https://github.com/tzapu/WiFiManager)
