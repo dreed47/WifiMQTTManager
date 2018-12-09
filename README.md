@@ -37,3 +37,20 @@ First cut at a library. Contributions are welcome.
 
 ## Support
 For issues, feature requests, comments or questions, use the [Github issues tracker](https://github.com/dreed47/WifiMQTTManager/issues).
+
+## Contributing
+1. Fork the project.
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request.
+
+## History
+Dec 10, 2018 - Version 1.0.0 released
+
+## Credits
+* [AlexT](https://github.com/tzapu) - author of [WiFiManager](https://github.com/tzapu/WiFiManager)
+* [Nick O'Leary](https://github.com/knolleary) - author of [PubSub Client](https://github.com/knolleary/pubsubclient)
+
+## License
+GNU GPL, see License.txt

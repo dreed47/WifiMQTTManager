@@ -1,6 +1,8 @@
 /*
   WiFiMQTTManager.h - Library for the ESP8266/ESP32 Arduino platform
   for configuration of WiFi and MQTT credentials using a AP mode and Captive Portal
+  Written by David Reed hashmark47@gmail.com
+  GNU license  
 */
 #ifndef WiFiMQTTManager_h
 #define WiFiMQTTManager_h

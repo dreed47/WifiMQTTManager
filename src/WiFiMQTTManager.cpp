@@ -1,6 +1,8 @@
 /*
   WiFiMQTTManager.cpp - Library for the ESP8266/ESP32 Arduino platform
   for configuration of WiFi and MQTT credentials using a Captive Portal
+  Written by David Reed hashmark47@gmail.com
+  GNU license  
 */
 #include "WiFiMQTTManager.h"
 

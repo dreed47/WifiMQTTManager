@@ -1,4 +1,13 @@
-// https://blog.galowicz.de/2016/02/20/short_file_macro/
+/*
+  utility.h - Library for the ESP8266/ESP32 Arduino platform
+  for configuration of WiFi and MQTT credentials using a AP mode and Captive Portal
+
+  credit: https://blog.galowicz.de/2016/02/20/short_file_macro/
+
+  Written by David Reed hashmark47@gmail.com
+  GNU license  
+*/
+
 using cstr = const char * const;
 
 static constexpr cstr past_last_slash(cstr str, cstr last_slash)
