@@ -58,6 +58,7 @@ void WiFiMQTTManager::setup(String sketchName) {
   _mac.toLowerCase();
   _mac.replace(":", "");
   _mac.replace("240ac4", "a");            // vendor = Espressif Inc.
+  _mac.replace("cc50e3", "b");            // vendor = Espressif Inc.
   String _clientId = "ESP_" + _mac;
 
   strcpy(chipId, _chipId.c_str());

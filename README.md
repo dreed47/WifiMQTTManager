@@ -1,6 +1,6 @@
 # WiFiMQTTManager
 
-ESP32/ESP8266 library that extends the [WiFiManager](https://github.com/tzapu/WiFiManager/tree/development) and [PubSub Client](https://github.com/knolleary/pubsubclient) Libraries and adds the ability to save SSID, WiFi password, and MQTT connection settings so that they don't have to be hard-coded in your sketches.  Also allows for user friendly naming of your IoT devices and publishes device registration data back to a Node Red Dashboard where you can initiate service actions on your devices (e.g. restart, or bring up it's access point to reconfigure/rename device, etc) 
+This ESP32/ESP8266 library extends the [WiFiManager](https://github.com/tzapu/WiFiManager/tree/development) and [PubSub Client](https://github.com/knolleary/pubsubclient) libraries and adds the ability to save SSID, WiFi password, and MQTT connection settings so that they don't have to be hard-coded in your sketches.  Also allows for user friendly naming of your IoT devices and publishes device registration data back to a Node Red Dashboard where you can initiate service actions on your devices (e.g. restart, or bring up it's access point to reconfigure/rename device, etc) 
 
 It's assumed that you already know how to setup an [Arduino development environment](https://www.arduino.cc/en/Guide/HomePage), including [how to install libraries](https://www.arduino.cc/en/Guide/Libraries), and that you already have [MQTT](https://mosquitto.org/download/) and [Node Red](https://nodered.org/docs/getting-started/)/[Dashboard](https://flows.nodered.org/node/node-red-dashboard) installed.  
 
@@ -8,14 +8,14 @@ First cut at a library. Contributions are welcome.
 
 ## Requirements
 
-* [WiFiManager Library (must use development branch)](https://github.com/tzapu/WiFiManager/tree/development)
-* [Arduino Json Library](https://github.com/bblanchon/ArduinoJson)
-* [PubSub Client Library](https://github.com/knolleary/pubsubclient)
-    + NOTE: Change MQTT_MAX_PACKET_SIZE in PubSubClient.h to 512 
+* [WiFiManager Library](https://github.com/tzapu/WiFiManager/tree/development) - IMPORTANT: - must use development branch
+* [Arduino Json Library](https://github.com/bblanchon/ArduinoJson) - install via Library Manager or manually
+* [PubSub Client Library](https://github.com/knolleary/pubsubclient) - install via Library Manager or manually
+    + IMPORTANT: Change MQTT_MAX_PACKET_SIZE in PubSubClient.h to 512 
 
 ## Quick Start
 1. Install the required libraries (see above)
-2. Download [WiFiMQTTManager](https://github.com/dreed47/WifiMQTTManager/archive/master.zip) and unzip it in your Arduino libraries folder.  Make sure the folder name is "WiFiMQTTManager".
+2. Download [WiFiMQTTManager](https://github.com/dreed47/WifiMQTTManager/archive/master.zip) and unzip it in your Arduino libraries folder.  Make sure the folder name is "WiFiMQTTManager". (or you can install via Library Manager)
 3. Edit the PubSubClient.h header file and change MQTT_MAX_PACKET_SIZE to 512
 4. Import (then Deploy) into Node Red the Dashboard json found in [/nodered/services-export.json](./nodered/services-export.json) file (make sure you enter your MQTT server address in the two MQTT nodes in the flow)
 5. Open Arduino IDE and attach your ESP32 or ESP8266 controller board to your computer (select the correct board and port)
@@ -28,7 +28,7 @@ First cut at a library. Contributions are welcome.
 
 
 ## Dashboard
-![dashboard](./nodered/dashboard.png)
+![dashboard](./README-images/dashboard.png)
 
 ## Access Point Configuration
 ![AP Menu](./README-images/ap-menu.png)
