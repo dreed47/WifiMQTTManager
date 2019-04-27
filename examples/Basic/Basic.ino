@@ -12,7 +12,7 @@ void setup() {
   // set debug to true to get verbose logging
   // wm.wm.setDebugOutput(true);
   // most likely need to format FS but only on first use
-  // wm.formatFS = true;
+  // wmm.formatFS = true;
   // optional - define the function that will subscribe to topics if needed
   wmm.subscribeTo = subscribeTo;
   // required - allow WiFiMQTTManager to do it's setup
