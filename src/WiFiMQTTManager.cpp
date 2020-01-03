@@ -114,8 +114,7 @@ void WiFiMQTTManager::setup(String sketchName) {
   //save the custom parameters to FS
   if (_shouldSaveConfig) {
     Serial.println("WMM: saving config...");
-    DynamicJsonBuffer jsonBuffer;
-    JsonObject& json = jsonBuffer.createObject();
+    DynamicJsonDocument json(2048);
     json["friendly_name"] = _friendly_name;
     json["mqtt_server"] = _mqtt_server;
     json["mqtt_port"]   = _mqtt_port;
@@ -127,8 +126,9 @@ void WiFiMQTTManager::setup(String sketchName) {
       Serial.println("WMM: failed to open config file for writing...");
     }
 
-    json.prettyPrintTo(Serial);
-    json.printTo(configFile);
+    serializeJsonPretty(json, Serial);
+    serializeJsonPretty(json, configFile);
+    //json.printTo(configFile);
     configFile.close();
     _shouldSaveConfig = false;
   }
@@ -189,19 +189,24 @@ void WiFiMQTTManager::_setupSpiffs(){
         std::unique_ptr<char[]> buf(new char[size]);
 
         configFile.readBytes(buf.get(), size);
-        DynamicJsonBuffer jsonBuffer;
-        JsonObject& json = jsonBuffer.parseObject(buf.get());
-        json.printTo(Serial);
-        if (json.success()) {
-          Serial.println("\nWMM: parsed json...");
-          strcpy(_friendly_name, json["friendly_name"]);
-          strcpy(_mqtt_server, json["mqtt_server"]);
-          strcpy(_mqtt_port, json["mqtt_port"]);
+	DynamicJsonDocument doc(size);
+
+	auto error = deserializeJson(doc, buf.get());
+	if (error) {
+    	    Serial.print(F("WMM: failed to load json config..."));
+	    Serial.println(error.c_str());
+	}
+	else{
+	  //serializeJson(doc, Serial);
+	  serializeJsonPretty(doc, Serial);
+	  Serial.println("\nWMM: parsed json...");
+	  strcpy(_friendly_name, doc["friendly_name"]);
+	  strcpy(_mqtt_server, doc["mqtt_server"]);
+	  strcpy(_mqtt_port, doc["mqtt_port"]);
           //strcpy(_mqtt_username, json["mqtt_username"]);
           //strcpy(_mqtt_password, json["mqtt_password"]);
-        } else {
-          Serial.println("WMM: failed to load json config...");
-        }
+	  }
+
       }
     } else { Serial.println("WMM: could not find config file..."); }
   } else {
@@ -262,10 +267,8 @@ void WiFiMQTTManager::setDebugOutput(bool b) {
 }
 
 void WiFiMQTTManager::_registerDevice() {
+  StaticJsonDocument<2000> root;
 
-  StaticJsonBuffer<2000> JSONbuffer;
-  JsonObject& root = JSONbuffer.createObject();
-  
   //Serial.println(WiFi.macAddress());
 
   //root["time"] = 1351824120;
@@ -279,11 +282,12 @@ void WiFiMQTTManager::_registerDevice() {
   char messageBuffer[2000];
   snprintf(topic, sizeof(topic), "%s%s", "deviceLog/", deviceId);
   
-  root.printTo(messageBuffer, sizeof(messageBuffer));
+  serializeJson(root,messageBuffer);
+  serializeJsonPretty(root,Serial);
 
   Serial.print("Sending message to MQTT topic: ");
   Serial.println(topic);
-  root.prettyPrintTo(Serial);
+  serializeJsonPretty(root,Serial);
   Serial.println();
   Serial.print("messageBuffer: ");
   Serial.println(messageBuffer);
