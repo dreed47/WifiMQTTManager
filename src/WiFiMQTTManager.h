@@ -25,6 +25,7 @@ void _settingsAP();
 class WiFiMQTTManager {
   public:
     WiFiMQTTManager(int resetPin, char* APpassword);
+    WiFiMQTTManager(int resetPin, char* APpassword, char* apWifiName);
     //WiFiManager wm;
     void setup(String sketchName);
     void loop();
@@ -39,6 +40,7 @@ class WiFiMQTTManager {
     long lastMsg;
     char deviceType[40];
   private:
+    void _init(int resetPin, char* APpassword);
     void _setupSpiffs();
     void _checkButton();
     void _registerDevice();
@@ -52,6 +54,7 @@ class WiFiMQTTManager {
     char _mqtt_port[6];
     String _sketchName;
     char* _APpassword;
+    char* _APwifiName;
     //char _mqtt_username[40] = "YOURMQTTUSERNAME";
     //char _mqtt_password[40] = "YOURMQTTPASSWORD";
     int _LED_BUILTIN;

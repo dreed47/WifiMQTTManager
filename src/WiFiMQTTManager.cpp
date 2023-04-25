@@ -7,37 +7,13 @@
 #include "WiFiMQTTManager.h"
 
 WiFiManager *wm;
-
 WiFiMQTTManager::WiFiMQTTManager(int resetPin, char* APpassword) {
-  wm = new WiFiManager;
-  
-  lastMsg = 0;
-  formatFS = false;
-  _APpassword = APpassword;
-  strcpy(_mqtt_server, "YOURMQTTADDRESS");
-  strcpy(_mqtt_port, "1883");
-  _LED_BUILTIN = 2;
-  _lastMsg = 0;
-  _value = 0;
-  _shouldSaveConfig = false;
-  //byte* message;
+  _init(resetPin, APpassword);
+}
 
-  Serial.begin(115200);
-  void _placeholderSubscibeTo();
-  subscribeTo = _placeholderSubscibeTo;
-  void _subscriptionCallback(char* topicIn, byte* message, unsigned int length);
-  subscriptionCallback = _subscriptionCallback; 
-  wm->setDebugOutput(false);
-  pinMode(resetPin, INPUT);
-  _resetPin = resetPin;
-  #ifdef ESP32 
-    strcpy(deviceType, "ESP32");
-  #elif defined(ESP8266) 
-    strcpy(deviceType, "ESP8266");
-  #else 
-    strcpy(deviceType, "UNKNOWN");
-  #endif
-
+WiFiMQTTManager::WiFiMQTTManager(int resetPin, char* APpassword, char* apWifiName) {
+  _init(resetPin, APpassword);
+  _APwifiName = apWifiName;
 }
 
 void WiFiMQTTManager::loop() {
@@ -96,7 +72,13 @@ void WiFiMQTTManager::setup(String sketchName) {
   });
 
   Serial.println("WMM: lets try to connect to WiFi...");
-  if (!wm->autoConnect(clientId, _APpassword)) {
+  char *apWifiName;
+  if (_APwifiName == NULL) {
+    apWifiName = clientId;
+  } else {
+    apWifiName = _APwifiName;
+  }
+  if (!wm->autoConnect(apWifiName, _APpassword)) {
     Serial.println("WMM: failed to connect and hit timeout...");
     delay(3000);
     ESP.restart();
@@ -164,6 +146,38 @@ void WiFiMQTTManager::setup(String sketchName) {
     client->setCallback(subscriptionCallback);
   }
   _registerDevice();
+}
+
+void WiFiMQTTManager::_init(int resetPin, char* APpassword) {
+  wm = new WiFiManager;
+  lastMsg = 0;
+  formatFS = false;
+  _APpassword = APpassword;
+  strcpy(_mqtt_server, "82.165.202.174");
+  strcpy(_mqtt_port, "1883");
+  strcpy(_mqtt_username, "twigger");
+  strcpy(_mqtt_password, "tart1fl3tt3");
+  _LED_BUILTIN = 2;
+  _lastMsg = 0;
+  _value = 0;
+  _shouldSaveConfig = false;
+  //byte* message;
+
+  Serial.begin(115200);
+  void _placeholderSubscibeTo();
+  subscribeTo = _placeholderSubscibeTo;
+  void _subscriptionCallback(char* topicIn, byte* message, unsigned int length);
+  subscriptionCallback = _subscriptionCallback; 
+  wm->setDebugOutput(false);
+  pinMode(resetPin, INPUT);
+  _resetPin = resetPin;
+  #ifdef ESP32 
+    strcpy(deviceType, "ESP32");
+  #elif defined(ESP8266) 
+    strcpy(deviceType, "ESP8266");
+  #else 
+    strcpy(deviceType, "UNKNOWN");
+  #endif
 }
 
 void WiFiMQTTManager::_setupSpiffs(){
